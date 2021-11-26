@@ -1,0 +1,5 @@
+{
+  "input": "in",
+  "output": "outp",
+  "filters": ["filter_number", "filter_alphakeys", "filter_notempty"]
+}

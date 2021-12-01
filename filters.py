@@ -20,6 +20,7 @@ def filter_number(key, value) -> tuple:
     if isinstance(value, numbers.Number):
         return key, value
 
+
 @prepare_filter
 def filter_alphakeys(key, value) -> tuple:
     if key.isalpha():
@@ -27,6 +28,6 @@ def filter_alphakeys(key, value) -> tuple:
 
 
 @prepare_filter
-def filter_notempty(key, value) -> tuple:
+def filter_nonempty(key, value) -> tuple:
     if value is not None:
         return key, value

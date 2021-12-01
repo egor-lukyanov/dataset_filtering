@@ -49,7 +49,7 @@ class DatasetFilter:
                 try:
                     item = filter_func(item)
                 except Exception as e:
-                    raise Exception(f"Filtering failure: {e}")
+                    raise Exception(f"Filtering failure in: {e}")
 
             result.update({item[0]: item[1]}) if item else None
 

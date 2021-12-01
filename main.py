@@ -5,6 +5,9 @@ import filters
 from processor import DatasetFilter, DataReader, DataWriter
 
 
+log = print
+
+
 def get_config(file_name):
     try:
         return json.loads(Path(file_name).read_text())
@@ -13,6 +16,7 @@ def get_config(file_name):
 
 
 if __name__ == '__main__':
+
     try:
         config = get_config('config.json')
         reader = DataReader(config.get('input', 'in'))
@@ -28,5 +32,6 @@ if __name__ == '__main__':
                 name,
                 DatasetFilter(dataset=dataset, filters=_filters).apply()
             )
+
     except Exception as e:
-        print(e)
+        log(e)
